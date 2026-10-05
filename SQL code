@@ -1,0 +1,33 @@
+CREATE TABLE RideBooking (
+    booking_id INT PRIMARY KEY AUTO_INCREMENT,
+    passenger_name VARCHAR(50),
+    pickup_location VARCHAR(100),
+    destination VARCHAR(100),
+    distance_km DOUBLE,
+    ride_type VARCHAR(20),
+    rate_per_km DOUBLE,
+    fare DOUBLE
+);
+INSERT INTO RideBooking
+(passenger_name, pickup_location, destination, distance_km, ride_type, rate_per_km, fare)
+VALUES
+('Spandana', 'Bangalore', 'Mysore', 10, 'Bike', 8, 80);
+
+INSERT INTO RideBooking
+(passenger_name, pickup_location, destination, distance_km, ride_type, rate_per_km, fare)
+VALUES
+('Nisha', 'College', 'Bus Stand', 5, 'Auto', 12, 60);
+
+INSERT INTO RideBooking
+(passenger_name, pickup_location, destination, distance_km, ride_type, rate_per_km, fare)
+VALUES
+('Rahul', 'Railway Station', 'Airport', 20, 'Cab', 18, 360);
+SELECT * FROM RideBooking;
+SELECT * FROM RideBooking
+WHERE passenger_name = 'Spandana';
+SELECT passenger_name,
+       ride_type,
+       distance_km,
+       rate_per_km,
+       distance_km * rate_per_km AS total_fare
+FROM RideBooking;
